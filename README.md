@@ -1,13 +1,27 @@
-Running development environment
-1. npm install in the root directory
-2. cd into ./client and npm install
-3. Follow the instructions https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries to set up a service account
-4. export GOOGLE_APPLICATION_CREDENTIALS="[PATH]", PATH is the location of your service account key. This is a JSON file
-5. npm run dev in the root folder to start the server
-6. npm start in the client folder to start the client
+# Running development environment
 
-Build for production
-1. cd into client
-2. npm run build
-3. cd to root
-4. gcloud app deploy --stop-previous-version
+To get started with the development environment, first run the following command in root directory of the project:
+
+```npm install```
+
+Change directory to ./client and run `npm install` again.
+
+You will need to set up a service account with Google Cloud, the instructions can be found [here](ttps://cloud.google.com/text-to-speech/docs/quickstart-client-libraries).
+
+After setting the service account you will need to download your key and set an environment variable so the Google client libraries can use it.
+
+```export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"```, PATH is the location of your service account key. This is a JSON file
+
+Now you can run `npm run dev` in the project root to start the server and `npm start` in ./client to start the client
+
+# Build for production
+
+First change directory to the client folder and run:
+
+```npm run build```
+
+This will create a production version of the client. This is what will be served by the server.
+
+Then change directory back to the project root and run:
+
+```gcloud app deploy --stop-previous-version```
