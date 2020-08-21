@@ -1,0 +1,81 @@
+.Text {
+  padding: 0.5rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.Self {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.Self .Msg {
+  order: 1;
+  border-bottom-right-radius: 0px;
+  box-shadow: 1px 2px 0px #d4d4d4;
+}
+
+.Msg {
+  background: white;
+  min-width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
+}
+
+.Msg p {
+  font-size: 1.0rem;
+  margin: 0 0 0.2rem 0;
+  color: rgb(81, 84, 255);
+}
+
+.Message {
+  font-size: 20px !important;
+}
+
+.Other .Msg {
+  order: 1;
+  border-top-left-radius: 0px;
+  box-shadow: -1px 2px 0px #d4d4d4;
+}
+.Other:before {
+  content: "";
+  position: relative;
+  top: 0px;
+  right: 0px;
+  left: 40px;
+  width: 0px;
+  height: 0px;
+  border: 5px solid #fff;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+::-webkit-scrollbar {
+  min-width: 12px;
+  width: 12px;
+  max-width: 12px;
+  min-height: 12px;
+  height: 12px;
+  max-height: 12px;
+  background: #e5e5e5;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(48, 87, 158);
+  border: none;
+  border-radius: 100px;
+  border: solid 3px #e5e5e5;
+  box-shadow: inset 0px 0px 3px #999;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
+  box-shadow: inset 0px 0px 3px #888;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #aaa;
+  box-shadow: inset 0px 0px 3px #7f7f7f;
+}
+::-webkit-scrollbar-button {
+  display: block;
+  height: 26px;
+}

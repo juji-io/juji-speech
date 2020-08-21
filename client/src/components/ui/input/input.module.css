@@ -1,0 +1,70 @@
+.Input {
+  padding: 5px 0;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: 22px;
+}
+
+
+.Label {
+  font: inherit;
+  padding: 10px 0;
+  margin: 10px 0;
+  font-size: 25px;
+  display: block;
+}
+
+.After {
+  font-size: 21px;
+}
+
+.Hidden {
+  margin-left: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.Radio {
+  height: 23px;
+  width: 23px;
+  padding: 5px 0;
+  margin: 5px 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.RadioLabel {
+  font: inherit;
+  margin-left: 5px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.Text {
+  outline: none;
+  border: 1px solid #a3a3a8;
+  background: #e3e3e6;
+  font: inherit;
+  padding: 6px 10px;
+  display: block;
+  width: 100%;
+  height: 55px;
+  padding: 5px 0;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+.Text:focus {
+  outline: none;
+  background: #c7c7ca;
+}
+
+::placeholder {
+  color: #74728885;
+}
+
+
+.Invalid {
+  border: 1.5px solid #FF555B;
+}

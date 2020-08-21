@@ -1,0 +1,24 @@
+.Chat {
+  width: 85%;
+  margin: 0 auto;
+  height: 725px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.New {
+  display: block;
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.New:hover {
+  color: black;
+}
+
+.Spinner {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}

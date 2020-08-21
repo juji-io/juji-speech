@@ -1,0 +1,27 @@
+.MessageList {
+  list-style: none;
+  background: none;
+  margin: 0;
+  padding: 0 0 50px 0;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  max-height: 550px;
+  height: 550px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.MessageWindow {
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 190;
+  border: 1px solid #a3a3a8;
+  background: #e3e3e6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

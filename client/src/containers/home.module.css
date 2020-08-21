@@ -1,0 +1,35 @@
+.Home {
+  margin: 0 auto;
+  width: 50%;
+  top: 50%;
+  box-sizing: border-box;
+}
+
+.TitleContainer {
+  width: 50%;
+  margin: 0 auto;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+
+.Title {
+  font: inherit;
+  padding: 2.5px 5px 0;
+  margin: auto 0;
+  font-size: 35px;
+  outline: none;
+}
+
+.ControlGroup {
+  padding: 175px 0 50px;
+  display: flex;
+  align-items: stretch;
+  margin: auto;
+}
+
+.Container {
+  max-height: 1000px;
+  height: 1000px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,90 @@
+.InputWrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.InputControls {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  height: 65px;
+}
+
+.Input {
+  outline: none;
+  border: 1px solid #a3a3a8;
+  background: #e3e3e6;
+  padding: 6px 10px;
+  display: block;
+  height: 75px;
+  width: 65%;
+  box-sizing: border-box;
+  font-size: 22px;
+}
+
+.Button {
+  display: block;
+  margin-left: auto;
+  width: 275px;
+  height: 75px;
+  font-size: 22px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  padding-left: 10px;
+  border: 1px solid #21084e;
+  background-color: #1c1533;
+}
+
+
+
+.Button:hover {
+  background-color: #060225;
+}
+
+.Button:disabled {
+  background-color: #625e66;
+  border: 1px solid #21084e;
+  color: white;
+  cursor: default;
+}
+
+.Button:hover:disabled {
+  background-color: #625e66;
+  color: white;
+  cursor: not-allowed;
+}
+
+.Start {
+  background-color: #23c38e;
+  border: 1px solid #28BD8B;
+}
+
+.Stop {
+  background-color: #FF555B;
+  border: 1px solid #e24a4f;
+}
+
+.Mic {
+  display: block;
+  padding-left: 10px;
+  margin-left: auto;
+  width: 250px;
+  height: 75px;
+  font-size: 22px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+}
+
+.MicText {
+  margin: auto;
+  padding-left: 10px;
+}
+
+.Icon {
+  margin: auto;
+}

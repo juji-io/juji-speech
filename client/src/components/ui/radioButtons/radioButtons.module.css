@@ -1,0 +1,29 @@
+.Toggle {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.ToggleControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.Title {
+  font: inherit;
+  padding: 2.5px 5px 0;
+  margin: 2.5px 5px 0;
+  font-size: 20px;
+  outline: none;
+  color: white;
+}
+
+.Button {
+  width: 175px;
+  margin: 5px 15px;
+}

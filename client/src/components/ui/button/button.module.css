@@ -1,0 +1,36 @@
+.Button {
+  display: block;
+  font: inherit;
+  padding: 15px;
+  margin: auto;
+  width: 500px;
+  height: 75px;
+  font-size: 22px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+}
+
+.Button:disabled {
+  background-color: #625e66;
+  border: 1px solid #21084e;
+  color: white;
+  cursor: default;
+}
+
+.Button:hover:disabled {
+  background-color: #625e66;
+  color: white;
+  cursor: not-allowed;
+}
+
+.unselected {
+  border: 1px solid #23c38e;
+  background-color: #28BD8B;
+}
+
+.selected {
+  border: 1px solid #e24a4f;
+  background-color: #FF555B;
+}
+
