@@ -6,7 +6,7 @@ To get started with the development environment, first run the following command
 
 Change directory to ./client and run `npm install` again.
 
-You will need to set up a service account with Google Cloud, the instructions can be found [here](ttps://cloud.google.com/text-to-speech/docs/quickstart-client-libraries).
+You will need to set up a service account with Google Cloud, the instructions can be found [here](https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries).
 
 After setting the service account you will need to download your key and set an environment variable so the Google client libraries can use it.
 
