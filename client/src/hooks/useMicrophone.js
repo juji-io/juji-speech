@@ -1,3 +1,10 @@
+/***
+ * 
+ * author: Wenhao Zhang
+ * 
+ */
+
+
 import { useState, useEffect } from "react";
 
 import Recorder from "recorder-js";

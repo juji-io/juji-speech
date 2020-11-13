@@ -1,3 +1,10 @@
+/***
+ * 
+ * author: Wenhao Zhang
+ * 
+ */
+
+
 import React, { useState } from "react";
 import { ChatContext, defaultChatInfo } from "./chatContext";
 

@@ -1,3 +1,10 @@
+/***
+ * 
+ * author: Wenhao Zhang
+ * 
+ */
+
+
 import React, { useState, useContext, useCallback, useEffect } from "react";
 
 import MessageList from "../../components/chatbox/messageList/messageList";

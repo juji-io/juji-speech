@@ -1,3 +1,10 @@
+/***
+ * 
+ * author: Wenhao Zhang
+ * 
+ */
+
+
 import React from "react";
 
 import Text from "./text/text";
