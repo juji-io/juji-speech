@@ -1,9 +1,8 @@
 /***
- * 
+ *
  * author: Wenhao Zhang
- * 
+ *
  */
-
 
 import React, { useState, useContext, useCallback, useEffect } from "react";
 
@@ -30,20 +29,24 @@ const Chat = () => {
 
   const tts = useCallback(
     async (text) => {
-      const result = await fetch("/tts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          text,
-          gender,
-        }),
-      });
+      try {
+        const result = await fetch("/tts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            text,
+            gender,
+          }),
+        });
 
-      const json = await result.json();
-      const sound = json.tts;
-      addToAudioQueue(sound);
+        const json = await result.json();
+        const sound = json.tts;
+        addToAudioQueue(sound);
+      } catch (e) {
+        console.log(e);
+      }
     },
     [gender, addToAudioQueue]
   );
@@ -150,18 +153,22 @@ const Chat = () => {
     }
 
     const stt = async () => {
-      const formData = new FormData();
-      formData.append("audio", recording, new Date().toISOString());
+      try {
+        const formData = new FormData();
+        formData.append("audio", recording, new Date().toISOString());
 
-      const result = await fetch("/stt", {
-        method: "POST",
-        body: formData,
-      });
+        const result = await fetch("/stt", {
+          method: "POST",
+          body: formData,
+        });
 
-      const json = await result.json();
-      const text = json.stt;
+        const json = await result.json();
+        const text = json.stt;
 
-      sendMessage(text);
+        sendMessage(text);
+      } catch (e) {
+        console.log(e);
+      }
     };
 
     stt();

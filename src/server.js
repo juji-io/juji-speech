@@ -1,16 +1,30 @@
 /***
- * 
+ *
  * author: Wenhao Zhang
- * 
+ *
  */
-
+const fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
+const yaml = require("js-yaml");
 
-const textToSpeech = require("@google-cloud/text-to-speech");
-const speechToText = require("@google-cloud/speech");
+let data = {};
+
+try {
+  const fileContents = fs.readFileSync("./config.yaml", "utf8");
+  data = yaml.load(fileContents);
+} catch (e) {
+  console.log(e);
+}
+let speech = {};
+
+if (data.speech === "azure") {
+  speech = require("./speech/azure");
+} else {
+  speech = require("./speech/google");
+}
 
 const server = express();
 
@@ -20,36 +34,13 @@ server.use(express.static("public"));
 
 const port = process.env.PORT || 8080;
 
-const voices = {
-  male: "A",
-  female: "C",
-};
-
 const upload = multer();
-
-const textToSpeechClient = new textToSpeech.TextToSpeechClient();
-const speechToTextClient = new speechToText.SpeechClient();
 
 server.post("/tts", async (req, res) => {
   try {
     const { text, gender } = req.body;
-
-    const request = {
-      input: { text },
-      // Select the language and SSML voice gender (optional)
-      voice: {
-        languageCode: "en-US",
-        name: `en-US-Wavenet-${voices[gender.toLowerCase()]}`,
-      },
-      // select the type of audio encoding
-      audioConfig: { audioEncoding: "LINEAR16" },
-    };
-
-    //Send the request to Google
-    const [response] = await textToSpeechClient.synthesizeSpeech(request);
-    const buffer = Buffer.from(response.audioContent, "base64");
-
-    res.send({ tts: buffer.toString("base64") });
+    const voice = await speech.tts(text, gender.toLowerCase());
+    res.send({ tts: voice });
   } catch (error) {
     console.log(error);
   }
@@ -58,24 +49,8 @@ server.post("/tts", async (req, res) => {
 server.post("/stt", upload.any(), async (req, res) => {
   try {
     const buffer = req.files[0].buffer;
-
-    const audio = {
-      content: buffer.toString("base64"),
-    };
-    const config = {
-      languageCode: "en-US",
-      audioChannelCount: 2,
-    };
-    const request = {
-      audio: audio,
-      config: config,
-    };
-
-    const [response] = await speechToTextClient.recognize(request);
-    const transcription = response.results
-      .map((result) => result.alternatives[0].transcript)
-      .join("\n");
-
+    fs.writeFileSync("test.wav", buffer, 'binary');
+    const transcription = await speech.sst(buffer);
     res.send({ stt: transcription });
   } catch (error) {
     console.log(error);

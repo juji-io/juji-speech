@@ -18,7 +18,9 @@
     "express": "^4.17.1",
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-ws": "^4.0.1",
+    "js-yaml": "^4.0.0",
     "linear16": "^1.2.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.14.1",
     "multer": "^1.4.2"
   },
   "devDependencies": {

@@ -1,0 +1,5 @@
+#azure or google
+speech: azure
+azure:
+  location: your region
+  key: your key
