@@ -49,7 +49,7 @@ server.post("/tts", async (req, res) => {
 server.post("/stt", upload.any(), async (req, res) => {
   try {
     const buffer = req.files[0].buffer;
-    fs.writeFileSync("test.wav", buffer, 'binary');
+    //fs.writeFileSync("/tmp/test.wav", buffer, 'binary');
     const transcription = await speech.sst(buffer);
     res.send({ stt: transcription });
   } catch (error) {
